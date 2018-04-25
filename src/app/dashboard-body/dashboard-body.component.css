@@ -1,0 +1,15 @@
+.body-background {
+    width: 100%;
+    position: absolute;
+    opacity: 0.5;
+    height: 127%;
+}
+
+.tabs {
+    position: absolute;
+    width: 100%;
+}
+
+.tab-title {
+    color : black;
+}

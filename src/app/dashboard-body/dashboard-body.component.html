@@ -1,0 +1,31 @@
+<div class="dashboard-body">
+  <img class="body-background" src="assets/images/body-background-image.jpg" alt=""/>
+  <ngb-tabset class="tabs">
+    <ngb-tab>
+        <ng-template ngbTabTitle><div class="tab-title">Forcasting Dashboard</div></ng-template>
+        <ng-template ngbTabContent>
+          <div>
+            <app-dashboard-line-chart></app-dashboard-line-chart>
+          </div>
+          <div>
+              <app-dashboard-pie-chart></app-dashboard-pie-chart>
+            </div>
+          <div>
+            <app-dashboard-bar-chart></app-dashboard-bar-chart>
+          </div>
+        </ng-template>
+      </ngb-tab>
+    <ngb-tab>
+      <ng-template ngbTabTitle><div class="tab-title">SIPROTEC Device Details</div></ng-template>
+      <ng-template ngbTabContent>
+        <p></p>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab>
+      <ng-template ngbTabTitle><div class="tab-title">SIPROTEC data</div></ng-template>
+      <ng-template ngbTabContent>
+        <p></p>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</div>
