@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef , AfterViewInit} from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { chart } from 'highcharts';
 import * as Highcharts from 'highcharts';
 import { ConfigService } from '../config/config.service';
@@ -9,7 +9,7 @@ import { ConfigService } from '../config/config.service';
   templateUrl: './dashboard-line-chart.component.html',
   styleUrls: ['./dashboard-line-chart.component.css']
 })
-export class DashboardLineChartComponent implements OnInit, AfterViewInit {
+export class DashboardLineChartComponent implements OnInit {
 
   @ViewChild('lineChartTarget') lineChartTarget: ElementRef;
   chart: Highcharts.ChartObject;
@@ -17,29 +17,25 @@ export class DashboardLineChartComponent implements OnInit, AfterViewInit {
   PastPowerUsage;
 
   constructor(configService : ConfigService) {
-    this.getPastPowerUsageConfig = configService.getConfig() + '/getPastPowerUsageConfig';
+    this.getPastPowerUsageConfig = configService.getConfig();
    }
 
   ngOnInit() {
+    this.showConfig();
   }
 
   showConfig() {
     this.getPastPowerUsageConfig
-      .subscribe(data => this.PastPowerUsage = {
-        months: data['monthsList'],
-        usage:  data['dataList']
-    });
+      .subscribe(data => this.loadLineChart(data));
   }
 
-  public ngAfterViewInit() {
-    
+  public loadLineChart(data) {
     let options: any = {
       title: {
           text: 'Average Power Usage'
       },
       xAxis: {
-          categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-              'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+          categories: data['months']
       },
       yAxis: {
         gridLineColor: '#87ceeb',
@@ -57,10 +53,7 @@ export class DashboardLineChartComponent implements OnInit, AfterViewInit {
           type: 'line',
           name: 'Power Usage',
           color: '#000080',
-          data: [
-              7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2,
-              26.5, 23.3, 18.3, 13.9, 9.6
-          ]
+          data: data['powerUsage']
       }]
     };
     this.chart = chart(this.lineChartTarget.nativeElement, options);

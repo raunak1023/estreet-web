@@ -1,0 +1,31 @@
+<div class="row customDropdownPos">
+  <div class="col">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-primary customDropdown" #levelDropDown id="levelDropDown" ngbDropdownToggle>{{selectedLevel}}</button>
+      <div ngbDropdownMenu aria-labelledby="levelDropDown">
+        <button class="dropdown-item" *ngFor="let level of levels" (click)="ChangeLevel(level)">{{level}}</button>
+      </div>
+    </div>
+  </div>
+  <label class="radio-inline"><input type="radio" name="optradio">Option 1</label>
+  <label class="radio-inline"><input type="radio" name="optradio">Option 2</label>
+  <label class="radio-inline"><input type="radio" name="optradio">Option 3</label>
+</div>
+  <div *ngIf="selectedLevel=='Energy purchased'">
+    <app-dashboard-line-chart></app-dashboard-line-chart>
+  </div>
+  <div *ngIf="selectedLevel=='Energy sold'">
+      <app-dashboard-pie-chart></app-dashboard-pie-chart>
+  </div>
+  <div *ngIf="selectedLevel=='Energy loss'">
+    <app-dashboard-bar-chart></app-dashboard-bar-chart>
+  </div>
+  <div *ngIf="selectedLevel=='Average monthly, yearly'">
+    
+  </div>
+  <div *ngIf="selectedLevel=='Total Profit'">
+    
+  </div>
+  <div *ngIf="selectedLevel=='Total loss'">
+    
+  </div>

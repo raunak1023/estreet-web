@@ -11,6 +11,7 @@ import { DashboardFooterComponent } from './dashboard-footer/dashboard-footer.co
 import { DashboardLineChartComponent } from './dashboard-line-chart/dashboard-line-chart.component';
 import { DashboardBarChartComponent } from './dashboard-bar-chart/dashboard-bar-chart.component';
 import { DashboardPieChartComponent } from './dashboard-pie-chart/dashboard-pie-chart.component';
+import { ChartsDropdownComponent } from './dashboard-body/charts-dropdown/charts-dropdown.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { DashboardPieChartComponent } from './dashboard-pie-chart/dashboard-pie-
     DashboardFooterComponent,
     DashboardLineChartComponent,
     DashboardBarChartComponent,
-    DashboardPieChartComponent 
+    DashboardPieChartComponent,
+    ChartsDropdownComponent
   ],
   imports: [
     BrowserModule,

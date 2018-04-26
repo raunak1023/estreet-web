@@ -1,0 +1,10 @@
+.customDropdown {
+    color: black;
+    border-color: transparent;
+}
+
+.customDropdownPos {
+    margin-left: 5%;
+    margin-top: 5%;
+    max-width: 52%;
+}

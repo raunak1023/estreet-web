@@ -5,11 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './dashboard-body.component.html',
   styleUrls: ['./dashboard-body.component.css']
 })
-export class DashboardBodyComponent implements OnInit {
+export class DashboardBodyComponent implements OnInit {  
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {    
+  }  
+  
 }
