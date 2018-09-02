@@ -15,6 +15,7 @@ import { ChartsDropdownComponent } from './dashboard-body/charts-dropdown/charts
 import { SiprotecDeviceDetailsComponent } from './dashboard-body/siprotec-device-details/siprotec-device-details.component';
 import { SiprotecDataComponent } from './dashboard-body/siprotec-data/siprotec-data.component';
 import { EnergyTradeComponent } from './dashboard-body/energy-trade/energy-trade.component';
+import { GenerationOutageComponent } from './dashboard-body/generation-outage/generation-outage.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { EnergyTradeComponent } from './dashboard-body/energy-trade/energy-trade
     ChartsDropdownComponent,
     SiprotecDeviceDetailsComponent,
     SiprotecDataComponent,
-    EnergyTradeComponent
+    EnergyTradeComponent,
+    GenerationOutageComponent
   ],
   imports: [
     BrowserModule,
