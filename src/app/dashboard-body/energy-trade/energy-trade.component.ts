@@ -18,7 +18,7 @@ export class EnergyTradeComponent implements OnInit {
   modalQuantity = 0;
   priceVal = '';
 
-  constructor(public modalService: NgbModal, public modalService2: NgbModal) {  
+  constructor(public modalService: NgbModal, public modalService2: NgbModal, public modalService3: NgbModal) {  
     let count=0;
     let count1=0;
     for(let i=0;i<this.states.length;i=i+5) {
@@ -32,6 +32,7 @@ export class EnergyTradeComponent implements OnInit {
 
   setPrice(val) {
     this.modalPrice = val * Number(this.priceVal.split('Mwh')[0]);
+    this.modalQuantity = val;
   }
 
   changeSelected(val) {
@@ -55,6 +56,14 @@ export class EnergyTradeComponent implements OnInit {
 
   openSubPopup(content2) {
     this.modalService2.open(content2, { windowClass: 'dark-modal'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  openConfPopup(content3) {
+    this.modalService3.open(content3, { windowClass: 'dark-modal'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
