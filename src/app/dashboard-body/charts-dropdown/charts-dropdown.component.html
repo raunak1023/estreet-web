@@ -1,5 +1,5 @@
 <div class="row customDropdownPos">
-  <div class="col">
+  <div class="col col-md-4">
     <div ngbDropdown class="d-inline-block">
       <button class="btn btn-outline-primary customDropdown" #levelDropDown id="levelDropDown" ngbDropdownToggle>{{selectedLevel}}</button>
       <div ngbDropdownMenu aria-labelledby="levelDropDown">
@@ -7,18 +7,23 @@
       </div>
     </div>
   </div>
-  <label class="radio-inline"><input type="radio" name="optradio">Option 1</label>
-  <label class="radio-inline"><input type="radio" name="optradio">Option 2</label>
-  <label class="radio-inline"><input type="radio" name="optradio">Option 3</label>
+  <div class="col col-md-7">
+    <label class="col-md-2 radio-inline"><input style="margin-right: 7px;" value="line" (click)="changeCharType('line')" type="radio" name="chartType" checked>Line</label>
+    <label class="col-md-2 radio-inline"><input style="margin-right: 7px;" value="bar" (click)="changeCharType('bar')" type="radio" name="chartType">Bar</label>
+    <label class="col-md-2 radio-inline"><input style="margin-right: 7px;" value="pie" (click)="changeCharType('pie')" type="radio" name="chartType">Pie</label>
+  </div>
 </div>
-  <div *ngIf="selectedLevel=='Energy purchased'">
+  <div *ngIf="selectedLevel=='Energy purchased' && chartType=='line'">
     <app-dashboard-line-chart></app-dashboard-line-chart>
   </div>
-  <div *ngIf="selectedLevel=='Energy sold'">
+  <div *ngIf="selectedLevel=='Energy purchased' && chartType=='bar'">
+    <app-dashboard-bar-chart></app-dashboard-bar-chart>
+  </div>
+  <div *ngIf="selectedLevel=='Energy purchased' && chartType=='pie'">
       <app-dashboard-pie-chart></app-dashboard-pie-chart>
   </div>
   <div *ngIf="selectedLevel=='Energy loss'">
-    <app-dashboard-bar-chart></app-dashboard-bar-chart>
+    
   </div>
   <div *ngIf="selectedLevel=='Average monthly, yearly'">
     

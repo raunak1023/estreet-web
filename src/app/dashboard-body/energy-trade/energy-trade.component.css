@@ -1,0 +1,66 @@
+.table-lbl {
+    color: white;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+
+table, th, td {
+    border: 1px solid white;
+    padding: 0.4% 0 0.4% 0;
+}
+
+.buy-btn {
+    background-color: aqua;
+}
+
+.sell-btn {
+    background-color: red;
+}
+button {
+    border-radius: 5px;
+    border-width: 1px;
+    background-color: white;
+}
+
+label {
+    color: green;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.modal-header {
+    background-color: #292b2c !important;
+    color: white;
+}
+
+.modal-body {
+    background-color: #292b2c !important;
+    color: white;
+    margin-left: 0px;
+}
+
+.modal-footer {
+    background-color: #292b2c !important;
+    color: white;
+}
+
+.modal-body td {
+    border: none;
+    text-align: left;
+}
+
+.modal-body table {
+    border: none;
+}
+
+.modal-header .close {
+    background-color: #292b2c;
+    color: white;
+}
+
+.form-inline {
+    background-color: #292b2c;
+}

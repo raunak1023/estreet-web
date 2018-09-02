@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PqaComponent } from './pqa.component';
+import { SiprotecDataComponent } from './siprotec-data.component';
 
-describe('PqaComponent', () => {
-  let component: PqaComponent;
-  let fixture: ComponentFixture<PqaComponent>;
+describe('SiprotecDataComponent', () => {
+  let component: SiprotecDataComponent;
+  let fixture: ComponentFixture<SiprotecDataComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PqaComponent ]
+      declarations: [ SiprotecDataComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PqaComponent);
+    fixture = TestBed.createComponent(SiprotecDataComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

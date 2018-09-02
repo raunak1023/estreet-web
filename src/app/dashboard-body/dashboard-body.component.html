@@ -6,18 +6,24 @@
         <ng-template ngbTabContent>
           <app-charts-dropdown></app-charts-dropdown>
         </ng-template>
-      </ngb-tab>
-    <ngb-tab>
+    </ngb-tab>
+    <!--<ngb-tab>
       <ng-template ngbTabTitle><div class="tab-title">SIPROTEC Device Details</div></ng-template>
       <ng-template ngbTabContent>
-        <p></p>
+        <app-siprotec-device-details></app-siprotec-device-details>
       </ng-template>
     </ngb-tab>
     <ngb-tab>
       <ng-template ngbTabTitle><div class="tab-title">SIPROTEC data</div></ng-template>
       <ng-template ngbTabContent>
-        <p></p>
+        <app-siprotec-data></app-siprotec-data>
       </ng-template>
-    </ngb-tab>
+    </ngb-tab>-->
+    <ngb-tab>
+      <ng-template ngbTabTitle><div class="tab-title">Energy Trade</div></ng-template>
+      <ng-template ngbTabContent>
+          <app-energy-trade></app-energy-trade>
+      </ng-template>
+  </ngb-tab>
   </ngb-tabset>
 </div>

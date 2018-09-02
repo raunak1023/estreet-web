@@ -17,7 +17,7 @@ export class DashboardLineChartComponent implements OnInit {
   PastPowerUsage;
 
   constructor(configService : ConfigService) {
-    this.getPastPowerUsageConfig = configService.getConfig();
+    this.getPastPowerUsageConfig = configService.getRequest('/getPastPowerUsage');
    }
 
   ngOnInit() {

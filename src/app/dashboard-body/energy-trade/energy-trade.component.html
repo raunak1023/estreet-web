@@ -1,0 +1,78 @@
+<div style="background-color:black">
+    <table>
+        <tr *ngFor="let stats of StatesDouble">
+          <td *ngFor="let stat of stats">
+            <p class="table-lbl">{{stat.name}}</p>
+            <label>{{stat.price}}</label>
+            <br>
+            <button class="buy-btn btn btn-outline-primary" (click)="open(content, stat)">BUY</button>
+            <button class="sell-btn btn btn-outline-primary" (click)="open(content, stat)">SELL</button>
+          </td>
+        </tr>
+    </table>
+</div>
+
+<ng-template #content let-c="close" let-d="dismiss"l>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Place Order</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <form class="form-inline">
+      <div class="modal-body form-group row">
+        <label for="Exchange" class="col-sm-6 col-form-label">Exchange:</label>
+        <div class="col-sm-6">
+          <input type="text" readonly value="INR" class="form-control"/>
+        </div>
+      </div>
+      <div class="modal-body form-group row">
+        <label for="ProductCode" class="col-sm-3 col-form-label">Product Code:</label>
+        <div class="col-sm-5" style="margin-left: 17px;">
+          <input type="text" readonly [value]="modalProduct" class="form-control"/>
+        </div>
+        <label for="BuySell" style="padding-right:30px;" class="col-sm-2 col-form-label">Buy/Sell:</label>
+        <div class="col-sm-1">
+            <div ngbDropdown class="d-inline-block">
+              <div class="btn btn-outline-primary" style="color: white;border-color: white;background-color:#292b2c;" id="dropdownBasic1" ngbDropdownToggle>{{selectedVal}}</div>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <div class="dropdown-item" (click)="changeSelected('Buy')">Buy</div>
+                <div class="dropdown-item" (click)="changeSelected('Sell')">Sell</div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="modal-body form-group row">
+        <label for="PriceType" style="margin-left:-26px;" class="col-sm-4 col-form-label">Price Type:</label>
+        <div class="col-sm-3">
+            <div ngbDropdown class="d-inline-block">
+              <div class="btn btn-outline-primary" style="color: white;border-color: white;background-color:#292b2c;" id="dropdownBasic1" ngbDropdownToggle>{{priceType}}</div>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <div class="dropdown-item" (click)="changeSelectedPriceType('Limit')">Limit</div>
+                <div class="dropdown-item" (click)="changeSelectedPriceType('Current')">Current</div>
+              </div>
+            </div>
+        </div>
+        <label for="Retention" style="margin-left: 68px;" class="col-sm-2 col-form-label">Retention:</label>
+        <div class="col-sm-1">
+          <input type="text" readonly value="Day" class="form-control" />
+        </div>
+      </div>
+      <div class="modal-body form-group row">
+        <label for="Quantity" style="margin-right: 10PX;" class="col-sm-3 col-form-label">Quantity:</label>
+        <div class="col-sm-4" style="display: inherit;">
+          <input type="number" min="0" [value]="modalQuantity" (input)="setPrice($event.target.value)" class="form-control"/>
+          <label class="col-sm-3 col-form-label" style="margin-left: -70px;">Mwh</label>
+        </div>
+        <label for="Price" style="margin-right: 19px;" class="col-sm-2 col-form-label">Price:</label>
+        <div class="col-sm-2" style="display: inherit;">
+          <input type="number" min="0" [value]="modalPrice" class="form-control"/>
+          <label class="col-sm-3 col-form-label" style="margin-left: -70px;">INR</label>
+        </div>
+      </div>
+    </form>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="d('Submit order')">Submit</button>
+        <button type="button" class="btn btn-outline-dark" (click)="d('Close order')">Close</button>
+    </div>
+  </ng-template>

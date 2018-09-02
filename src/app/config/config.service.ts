@@ -8,8 +8,8 @@ export class ConfigService {
 
   configUrl = 'http://127.0.0.1:9010';
 
-  getConfig() {
-    return this.http.get(this.configUrl + '/getPastPowerUsage', {
+  getRequest(path) {
+    return this.http.get(this.configUrl + path, {
       headers: {
         'withCredentials' : 'true',
         'Access-Control-Allow-Origin' : '*',

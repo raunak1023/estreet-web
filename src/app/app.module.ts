@@ -12,6 +12,9 @@ import { DashboardLineChartComponent } from './dashboard-line-chart/dashboard-li
 import { DashboardBarChartComponent } from './dashboard-bar-chart/dashboard-bar-chart.component';
 import { DashboardPieChartComponent } from './dashboard-pie-chart/dashboard-pie-chart.component';
 import { ChartsDropdownComponent } from './dashboard-body/charts-dropdown/charts-dropdown.component';
+import { SiprotecDeviceDetailsComponent } from './dashboard-body/siprotec-device-details/siprotec-device-details.component';
+import { SiprotecDataComponent } from './dashboard-body/siprotec-data/siprotec-data.component';
+import { EnergyTradeComponent } from './dashboard-body/energy-trade/energy-trade.component';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import { ChartsDropdownComponent } from './dashboard-body/charts-dropdown/charts
     DashboardLineChartComponent,
     DashboardBarChartComponent,
     DashboardPieChartComponent,
-    ChartsDropdownComponent
+    ChartsDropdownComponent,
+    SiprotecDeviceDetailsComponent,
+    SiprotecDataComponent,
+    EnergyTradeComponent
   ],
   imports: [
     BrowserModule,
