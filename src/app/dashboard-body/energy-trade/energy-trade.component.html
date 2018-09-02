@@ -5,8 +5,8 @@
             <p class="table-lbl">{{stat.name}}</p>
             <label>{{stat.price}}</label>
             <br>
-            <button class="buy-btn btn btn-outline-primary" (click)="open(content, stat)">BUY</button>
-            <button class="sell-btn btn btn-outline-primary" (click)="open(content, stat)">SELL</button>
+            <button class="buy-btn btn btn-outline-primary" (click)="open(content, stat, 'Buy')">BUY</button>
+            <button class="sell-btn btn btn-outline-primary" (click)="open(content, stat, 'Sell')">SELL</button>
           </td>
         </tr>
     </table>
@@ -72,7 +72,52 @@
       </div>
     </form>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="d('Submit order')">Submit</button>
+        <button type="button" class="btn btn-outline-dark" (click)="d('Submit order');openSubPopup(content2)">Submit</button>
         <button type="button" class="btn btn-outline-dark" (click)="d('Close order')">Close</button>
     </div>
   </ng-template>
+
+  <ng-template #content2 let-c="close" let-d="dismiss">
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Put {{selectedVal}} Order</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table>
+          <tr>
+            <td>Exchange</td>
+            <td>INR</td>
+          </tr>
+          <tr>
+            <td>Product Code</td>
+            <td>{{modalProduct}}</td>
+          </tr>
+          <tr>
+            <td>Buy/Sell</td>
+            <td>{{selectedVal}}</td>
+          </tr>
+          <tr>
+            <td>Price Type</td>
+            <td>{{priceType}}</td>
+          </tr>
+          <tr>
+            <td>Retention</td>
+            <td>DAY</td>
+          </tr>
+          <tr>
+            <td>Quantity</td>
+            <td>{{modalQuantity}} Mwh</td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td>{{modalPrice}} INR</td>
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Submit</button>
+        <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+      </div>
+    </ng-template>
