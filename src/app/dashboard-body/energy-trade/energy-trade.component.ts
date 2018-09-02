@@ -31,7 +31,8 @@ export class EnergyTradeComponent implements OnInit {
   }
 
   setPrice(val) {
-    this.modalPrice = val * Number(this.priceVal.split('Mwh')[0]);
+    //this.modalPrice = val * Number(this.priceVal.split('Mwh')[0]);
+    this.modalPrice = val * 5;
     this.modalQuantity = val;
   }
 
